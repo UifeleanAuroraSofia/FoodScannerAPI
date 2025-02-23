@@ -21,6 +21,7 @@ def ocr_view(request):
         # pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
         pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
         extracted_text = pytesseract.image_to_string(img, lang='eng+ron')
+        extracted_text = extracted_text.replace('\n', ' ')
 
         text_lower = extracted_text.lower()
         text_normalized = unidecode.unidecode(text_lower)
