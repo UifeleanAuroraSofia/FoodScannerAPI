@@ -57,7 +57,7 @@ def ocr_view(request):
                 })
 
         response = {
-            "text_extras": extracted_text.strip(),
+            "text_extras": text_normalized.strip(),
             "unhealthy_substances_found": found_unhealthy
         }
         return JsonResponse(response, status=200)
