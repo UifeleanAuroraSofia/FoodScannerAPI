@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': os.environ.get('DB_NAME', 'FoodScanner'),
         'USER': os.environ.get('DB_USER', 'postgres'),
         'PASSWORD': os.environ.get('DB_PASSWORD', 'admin'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'HOST': os.environ.get('DB_HOST', 'https://foodscannerapi.onrender.com/'),
         'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
