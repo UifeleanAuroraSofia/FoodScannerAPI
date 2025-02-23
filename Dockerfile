@@ -22,4 +22,7 @@ ENV PORT=8000
 
 # 6. Comanda de start a aplicației (Gunicorn)
 # 'FoodScannerAPI.wsgi:application'
-CMD gunicorn FoodScannerAPI.wsgi:application --bind 0.0.0.0:$PORT
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
+CMD ["/app/entrypoint.sh"]
