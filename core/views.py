@@ -18,7 +18,7 @@ def ocr_view(request):
         file = request.FILES['image']
         img = Image.open(BytesIO(file.read()))
 
-        pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
+        # pytesseract.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
         extracted_text = pytesseract.image_to_string(img, lang='eng+ron')
 
         text_lower = extracted_text.lower()
