@@ -58,6 +58,7 @@ def ocr_view(request):
                 })
 
         response = {
+            "all_substances": all_substances,
             "text_extras": text_normalized.strip(),
             "unhealthy_substances_found": found_unhealthy
         }
