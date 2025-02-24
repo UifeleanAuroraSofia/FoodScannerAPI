@@ -57,8 +57,19 @@ def ocr_view(request):
                     "description": sub.description
                 })
 
+        all_substances_serialized = [
+            {
+                "id": obj.id,
+                "name_ro": obj.name_ro,
+                "abbreviation": obj.abbreviation,
+                "name_en": obj.name_en,
+                "description": obj.description
+            }
+            for obj in DangerousSubstance.objects.all()
+        ]
+
         response = {
-            "all_substances": all_substances,
+            "all_substances": all_substances_serialized,
             "text_extras": text_normalized.strip(),
             "unhealthy_substances_found": found_unhealthy
         }
